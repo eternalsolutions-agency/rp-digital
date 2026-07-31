@@ -87,12 +87,7 @@ export default function About() {
               Contattami
             </a>
 
-            <a
-              href="#"
-              className="rounded-xl border border-white/15 px-6 py-4 font-semibold text-white transition hover:border-white"
-            >
-              LinkedIn
-            </a>
+            
           </div>
         </motion.div>
       </div>
