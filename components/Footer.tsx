@@ -1,6 +1,13 @@
 "use client";
 
-import { Phone, Mail, Globe } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Globe,
+  Linkedin,
+  Instagram,
+  Facebook
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -52,43 +59,47 @@ export default function Footer() {
 
           {/* Social */}
 
-          <div>
-            <h4 className="mb-5 text-lg font-bold text-white">
-              Seguimi
-            </h4>
+          {/* Social */}
 
-            <div className="space-y-4">
+<div>
+  <h4 className="mb-5 text-lg font-bold text-white">
+    Seguimi
+  </h4>
 
-              <a
-                href="https://www.linkedin.com/in/riccardopellegrino/"
-                target="_blank"
-                className="flex items-center gap-3 text-zinc-400 transition hover:text-white"
-              >
-                <span className="font-bold">in</span>
-                LinkedIn
-              </a>
+  <div className="space-y-4">
 
-              <a
-                href="https://www.instagram.com/riccardopellegrino82/"
-                target="_blank"
-                className="flex items-center gap-3 text-zinc-400 transition hover:text-white"
-              >
-                <span>📷</span>
-                Instagram
-              </a>
+    <a
+      href="https://www.linkedin.com/in/riccardopellegrino/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+    >
+      <Linkedin size={20} />
+      LinkedIn
+    </a>
 
-              <a
-                href="https://www.facebook.com/riccardopellegrino.digital"
-                target="_blank"
-                className="flex items-center gap-3 text-zinc-400 transition hover:text-white"
-              >
-                <span>f</span>
-                Facebook
-              </a>
+    <a
+      href="https://www.instagram.com/riccardopellegrino82/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+    >
+      <Instagram size={20} />
+      Instagram
+    </a>
 
-            </div>
-          </div>
+    <a
+      href="https://www.facebook.com/riccardopellegrino.digital"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+    >
+      <Facebook size={20} />
+      Facebook
+    </a>
 
+  </div>
+</div>
           {/* Informazioni */}
 
           <div>
