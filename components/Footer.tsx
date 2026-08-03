@@ -6,8 +6,6 @@ import {
   Phone,
   Mail,
   Globe,
-  Linkedin,
-  Instagram,
 } from "lucide-react";
 
 export default function Footer() {
