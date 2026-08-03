@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Mail, Globe } from "lucide-react";
+
 
 import {
   Phone,
