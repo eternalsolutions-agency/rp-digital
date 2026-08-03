@@ -1,13 +1,12 @@
 "use client";
 
+import { Phone, Mail, Globe } from "lucide-react";
+
 import {
-  Phone,
-  Mail,
-  Globe,
-  Linkedin,
-  Instagram,
-  Facebook
-} from "lucide-react";
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
