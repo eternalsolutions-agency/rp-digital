@@ -17,7 +17,7 @@ export const portfolio: PortfolioItem[] = [
     subtitle: "Sito Web Aziendale",
     description:
       "Realizzazione di un sito professionale per uno studio di amministrazione condominiale, progettato per valorizzare i servizi offerti, migliorare la presenza online e facilitare il contatto con nuovi clienti.",
-    image: "/images/portfolio/amministrazioni.png",
+    image: "/images/portfolio/amministratori.png",
     url: "https://www.amministrazionicondominialirovereto.it/",
     technologies: [
       "HTML",
