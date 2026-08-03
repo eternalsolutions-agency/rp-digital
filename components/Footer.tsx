@@ -3,10 +3,12 @@
 import { Phone, Mail, Globe } from "lucide-react";
 
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+  Phone,
+  Mail,
+  Globe,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   return (
