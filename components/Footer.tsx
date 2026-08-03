@@ -6,8 +6,6 @@ import {
   Phone,
   Mail,
   Globe,
-  Linkedin,
-  Instagram,
 } from "lucide-react";
 
 export default function Footer() {
@@ -73,9 +71,8 @@ export default function Footer() {
       href="https://www.linkedin.com/in/riccardopellegrino/"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+      className="text-zinc-400 hover:text-red-500"
     >
-      <Linkedin size={20} />
       LinkedIn
     </a>
 
@@ -83,9 +80,8 @@ export default function Footer() {
       href="https://www.instagram.com/riccardopellegrino82/"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+      className="block text-zinc-400 hover:text-red-500"
     >
-      <Instagram size={20} />
       Instagram
     </a>
 
@@ -93,11 +89,8 @@ export default function Footer() {
       href="https://www.facebook.com/riccardopellegrino.digital"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
+      className="block text-zinc-400 hover:text-red-500"
     >
-      <span className="flex h-5 w-5 items-center justify-center rounded-full border border-current text-xs font-bold">
-        f
-      </span>
       Facebook
     </a>
 
