@@ -67,33 +67,38 @@ export default function Footer() {
     Seguimi
   </h4>
 
-  <div className="flex gap-4">
+  <div className="space-y-4">
 
     <a
       href="https://www.linkedin.com/in/riccardopellegrino/"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition duration-300 hover:scale-110 hover:bg-red-600"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
     >
-      <FaLinkedinIn size={18} />
+      <Linkedin size={20} />
+      LinkedIn
     </a>
 
     <a
       href="https://www.instagram.com/riccardopellegrino82/"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition duration-300 hover:scale-110 hover:bg-red-600"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
     >
-      <FaInstagram size={18} />
+      <Instagram size={20} />
+      Instagram
     </a>
 
     <a
       href="https://www.facebook.com/riccardopellegrino.digital"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition duration-300 hover:scale-110 hover:bg-red-600"
+      className="flex items-center gap-3 text-zinc-400 transition hover:text-red-500"
     >
-      <FaFacebookF size={18} />
+      <span className="flex h-5 w-5 items-center justify-center rounded-full border border-current text-xs font-bold">
+        f
+      </span>
+      Facebook
     </a>
 
   </div>
