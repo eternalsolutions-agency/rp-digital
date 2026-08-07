@@ -30,25 +30,22 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="mt-8 text-5xl font-black leading-none tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+            transition={{ delay: .2, duration: .7 }}
+            className="mt-8 max-w-5xl text-6xl font-black leading-none tracking-tight text-white md:text-8xl"
           >
-            Il digitale
+            Trasformo idee
             <br />
-            che fa crescere
-            <br />
-            il tuo business.
+            in risultati.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.45, duration: 0.7 }}
-            className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl md:leading-9"
-          >
-            Realizzo siti web, strategie digitali, social media,
-            applicazioni e automazioni AI progettate per aiutare aziende e
-            professionisti a ottenere risultati concreti.
+            transition={{ delay: .45 }}
+            className="mt-8 max-w-2xl text-xl leading-9 text-zinc-400"
+        >
+            Realizzo siti web, app, strategie social e digital marketing
+            per trasformare la tua presenza online in un reale vantaggio competitivo.
           </motion.p>
 
           <motion.div
