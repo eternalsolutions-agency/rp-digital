@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, Globe } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 function LinkedinIcon() {
   return (
@@ -28,7 +29,9 @@ function FacebookIcon() {
   );
 }
 
+const copy={it:{desc:"Web Design, Digital Marketing, AI Solutions, sviluppo App e strategie digitali per aziende e professionisti.",contacts:"Contatti",follow:"Seguimi",info:"Informazioni",rights:"Tutti i diritti riservati.",made:"Sito realizzato da"},en:{desc:"Web Design, Digital Marketing, AI Solutions, App development and digital strategies for companies and professionals.",contacts:"Contact",follow:"Follow me",info:"Information",rights:"All rights reserved.",made:"Website created by"},es:{desc:"Diseño Web, Marketing Digital, Soluciones de IA, desarrollo de Apps y estrategias digitales para empresas y profesionales.",contacts:"Contacto",follow:"Sígueme",info:"Información",rights:"Todos los derechos reservados.",made:"Sitio realizado por"}};
 export default function Footer() {
+  const {language}=useLanguage(); const t=copy[language];
   return (
     <footer className="border-t border-white/10 bg-[#050505]">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -36,13 +39,12 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-black text-white">RP Digital</h3>
             <p className="mt-5 leading-8 text-zinc-400">
-              Web Design, Digital Marketing, AI Solutions, sviluppo App e strategie
-              digitali per aziende e professionisti.
+              {t.desc}
             </p>
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Contatti</h4>
+            <h4 className="mb-5 text-lg font-bold text-white">{t.contacts}</h4>
             <div className="space-y-4 text-zinc-400">
               <p className="flex items-center gap-3">
                 <Phone size={18} className="text-red-500" />
@@ -60,7 +62,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Seguimi</h4>
+            <h4 className="mb-5 text-lg font-bold text-white">{t.follow}</h4>
             <div className="flex gap-3">
               <a
                 href="https://www.linkedin.com/in/riccardopellegrino/"
@@ -93,7 +95,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-lg font-bold text-white">Informazioni</h4>
+            <h4 className="mb-5 text-lg font-bold text-white">{t.info}</h4>
             <div className="space-y-4 text-zinc-400">
               <p>P. IVA 01242270575</p>
               <a href="#" className="block transition hover:text-white">Privacy Policy</a>
@@ -103,9 +105,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 border-t border-white/10 pt-8 text-center text-sm text-zinc-500">
-          © 2026 RP Digital · P. IVA 01242270575 · Tutti i diritti riservati.
+          © 2026 RP Digital · P. IVA 01242270575 · {t.rights}
           <br />
-          Sito realizzato da <span className="font-semibold text-white">RP Digital</span>
+          {t.made} <span className="font-semibold text-white">RP Digital</span>
         </div>
       </div>
     </footer>

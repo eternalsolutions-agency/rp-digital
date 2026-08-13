@@ -1,107 +1,11 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { MessageCircle, Lightbulb, Code2, Rocket } from "lucide-react";
-
-const steps = [
-  {
-    icon: MessageCircle,
-    number: "01",
-    title: "Ascolto",
-    description:
-      "Analizziamo insieme il tuo progetto, gli obiettivi e il pubblico che vuoi raggiungere.",
-  },
-  {
-    icon: Lightbulb,
-    number: "02",
-    title: "Strategia",
-    description:
-      "Progetto la soluzione più efficace per migliorare la tua presenza digitale e ottenere risultati concreti.",
-  },
-  {
-    icon: Code2,
-    number: "03",
-    title: "Realizzazione",
-    description:
-      "Sviluppo il sito, l'app o la strategia digitale curando ogni dettaglio, dal design alle prestazioni.",
-  },
-  {
-    icon: Rocket,
-    number: "04",
-    title: "Crescita",
-    description:
-      "Dopo la pubblicazione continuo a supportarti con ottimizzazioni, aggiornamenti e nuove opportunità.",
-  },
-];
-
-export default function Process() {
-  return (
-    <section id="metodo" className="bg-[#050505] py-28">
-      <div className="mx-auto max-w-7xl px-6">
-
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: .6 }}
-          className="mx-auto mb-20 max-w-3xl text-center"
-        >
-          <span className="text-sm font-semibold uppercase tracking-[4px] text-red-500">
-            Metodo
-          </span>
-
-          <h2 className="mt-5 text-4xl font-black text-white md:text-5xl">
-            Un processo semplice, risultati concreti.
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
-            Ogni progetto segue un percorso chiaro, dalla prima idea fino alla
-            pubblicazione e alla crescita online.
-          </p>
-        </motion.div>
-
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: .5,
-                  delay: index * .1,
-                }}
-                className="group relative rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-red-500/40"
-              >
-                <span className="absolute right-6 top-6 text-5xl font-black text-white/5">
-                  {step.number}
-                </span>
-
-                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600/15 transition group-hover:bg-red-600">
-                  <Icon
-                    size={30}
-                    className="text-red-500 transition group-hover:text-white"
-                  />
-                </div>
-
-                <h3 className="mb-4 text-2xl font-bold text-white">
-                  {step.title}
-                </h3>
-
-                <p className="leading-8 text-zinc-400">
-                  {step.description}
-                </p>
-              </motion.div>
-            );
-          })}
-
-        </div>
-
-      </div>
-    </section>
-  );
-}
+import { useLanguage } from "./LanguageProvider";
+const icons=[MessageCircle,Lightbulb,Code2,Rocket];
+const copy={
+it:{label:"Metodo",title:"Un processo semplice, risultati concreti.",intro:"Ogni progetto segue un percorso chiaro, dalla prima idea fino alla pubblicazione e alla crescita online.",items:[["Ascolto","Analizziamo insieme il tuo progetto, gli obiettivi e il pubblico che vuoi raggiungere."],["Strategia","Progetto la soluzione più efficace per migliorare la tua presenza digitale e ottenere risultati concreti."],["Realizzazione","Sviluppo il sito, l'app o la strategia digitale curando ogni dettaglio, dal design alle prestazioni."],["Crescita","Dopo la pubblicazione continuo a supportarti con ottimizzazioni, aggiornamenti e nuove opportunità."]]},
+en:{label:"Method",title:"A simple process, concrete results.",intro:"Every project follows a clear path, from the first idea through launch and online growth.",items:[["Listen","Together we analyze your project, goals and the audience you want to reach."],["Strategy","I design the most effective solution to improve your digital presence and achieve concrete results."],["Creation","I develop the website, app or digital strategy, taking care of every detail from design to performance."],["Growth","After launch, I continue supporting you with optimizations, updates and new opportunities."]]},
+es:{label:"Método",title:"Un proceso sencillo, resultados concretos.",intro:"Cada proyecto sigue un recorrido claro, desde la primera idea hasta la publicación y el crecimiento online.",items:[["Escucha","Analizamos juntos tu proyecto, los objetivos y el público al que quieres llegar."],["Estrategia","Diseño la solución más eficaz para mejorar tu presencia digital y conseguir resultados concretos."],["Realización","Desarrollo el sitio, la app o la estrategia digital cuidando cada detalle, desde el diseño hasta el rendimiento."],["Crecimiento","Después de la publicación sigo apoyándote con optimizaciones, actualizaciones y nuevas oportunidades."]]}
+};
+export default function Process(){const {language}=useLanguage();const t=copy[language];return <section id="metodo" className="bg-[#050505] py-28"><div className="mx-auto max-w-7xl px-6"><div className="mx-auto mb-20 max-w-3xl text-center"><span className="text-sm font-semibold uppercase tracking-[4px] text-red-500">{t.label}</span><h2 className="mt-5 text-4xl font-black text-white md:text-5xl">{t.title}</h2><p className="mt-6 text-lg leading-8 text-zinc-400">{t.intro}</p></div><div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">{t.items.map((item,i)=>{const Icon=icons[i];return <motion.div key={i} whileHover={{y:-8}} className="relative rounded-3xl border border-white/10 bg-white/5 p-8"><span className="absolute right-6 top-6 text-5xl font-black text-white/5">0{i+1}</span><div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600/15"><Icon size={30} className="text-red-500"/></div><h3 className="mb-4 text-2xl font-bold text-white">{item[0]}</h3><p className="leading-8 text-zinc-400">{item[1]}</p></motion.div>})}</div></div></section>}

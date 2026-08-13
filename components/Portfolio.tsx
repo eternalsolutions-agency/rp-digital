@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import { portfolio, PortfolioItem } from "@/data/portfolio";
+import { useLanguage } from "./LanguageProvider";
 
 import ProjectCard from "./ProjectCard";
 import AppCard from "./AppCard";
@@ -11,7 +12,9 @@ import PhonePreviewModal from "./PhonePreviewModal";
 
 type Filter = "all" | "website" | "app";
 
+const copy={it:{title:"Alcuni dei miei lavori",intro:"Una selezione di siti web e applicazioni sviluppate per aziende e professionisti con particolare attenzione a design, prestazioni ed esperienza utente.",all:"Tutti",web:"Siti Web",apps:"Applicazioni"},en:{title:"Some of my work",intro:"A selection of websites and applications developed for companies and professionals, with a strong focus on design, performance and user experience.",all:"All",web:"Websites",apps:"Applications"},es:{title:"Algunos de mis trabajos",intro:"Una selección de sitios web y aplicaciones desarrolladas para empresas y profesionales, con especial atención al diseño, rendimiento y experiencia de usuario.",all:"Todos",web:"Sitios Web",apps:"Aplicaciones"}};
 export default function Portfolio() {
+  const {language}=useLanguage(); const t=copy[language];
   const [filter, setFilter] = useState<Filter>("all");
 
   const [selectedApp, setSelectedApp] = useState<PortfolioItem | null>(null);
@@ -42,13 +45,11 @@ export default function Portfolio() {
             </p>
 
             <h2 className="mt-4 text-5xl font-black text-white">
-              Alcuni dei miei lavori
+              {t.title}
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              Una selezione di siti web e applicazioni sviluppate
-              per aziende e professionisti con particolare attenzione
-              a design, prestazioni ed esperienza utente.
+              {t.intro}
             </p>
           </motion.div>
 
@@ -62,7 +63,7 @@ export default function Portfolio() {
                   : "bg-zinc-900 text-zinc-400 hover:text-white"
               }`}
             >
-              Tutti
+              {t.all}
             </button>
 
             <button
@@ -73,7 +74,7 @@ export default function Portfolio() {
                   : "bg-zinc-900 text-zinc-400 hover:text-white"
               }`}
             >
-              Siti Web
+              {t.web}
             </button>
 
             <button
@@ -84,7 +85,7 @@ export default function Portfolio() {
                   : "bg-zinc-900 text-zinc-400 hover:text-white"
               }`}
             >
-              Applicazioni
+              {t.apps}
             </button>
 
           </div>
@@ -95,12 +96,12 @@ export default function Portfolio() {
               project.type === "website" ? (
                 <ProjectCard
                   key={project.id}
-                  project={project}
+                  project={project} language={language}
                 />
               ) : (
                 <AppCard
                   key={project.id}
-                  app={project}
+                  app={project} language={language}
                   onOpen={setSelectedApp}
                 />
               )
@@ -113,6 +114,7 @@ export default function Portfolio() {
 
       <PhonePreviewModal
         app={selectedApp}
+        language={language}
         onClose={() => setSelectedApp(null)}
       />
     </>

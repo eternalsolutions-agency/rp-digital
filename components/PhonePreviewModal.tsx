@@ -3,16 +3,21 @@
 import { X, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PortfolioItem } from "@/data/portfolio";
+import { Language } from "./LanguageProvider";
 
 type Props = {
   app: PortfolioItem | null;
   onClose: () => void;
+  language: Language;
 };
 
 export default function PhonePreviewModal({
   app,
   onClose,
+  language,
 }: Props) {
+  const localized = app && language !== "it" ? app.translations?.[language] : null;
+  const openLabel = language === "en" ? "Open in browser" : language === "es" ? "Abrir en el navegador" : "{openLabel}";
   return (
     <AnimatePresence>
 
@@ -62,7 +67,7 @@ export default function PhonePreviewModal({
               </h3>
 
               <p className="mt-3 text-zinc-400">
-                {app.description}
+                {localized?.description || app.description}
               </p>
 
               <a
@@ -70,7 +75,7 @@ export default function PhonePreviewModal({
                 target="_blank"
                 className="mt-6 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-white hover:bg-red-700"
               >
-                Apri nel browser
+                {openLabel}
 
                 <ExternalLink size={18} />
               </a>

@@ -4,13 +4,17 @@ import Image from "next/image";
 import { Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 import { PortfolioItem } from "@/data/portfolio";
+import { Language } from "./LanguageProvider";
 
 type Props = {
   app: PortfolioItem;
   onOpen: (app: PortfolioItem) => void;
+  language: Language;
 };
 
-export default function AppCard({ app, onOpen }: Props) {
+export default function AppCard({ app, onOpen, language }: Props) {
+  const localized = language === "it" ? {subtitle: app.subtitle, description: app.description} : app.translations?.[language] || {subtitle: app.subtitle, description: app.description};
+  const tryApp = language === "en" ? "Try App" : language === "es" ? "Probar App" : "Prova App";
   return (
     <motion.article
       whileHover={{ y: -8, scale: 1.02 }}
@@ -31,7 +35,7 @@ export default function AppCard({ app, onOpen }: Props) {
       <div className="p-7">
 
         <p className="mb-2 text-sm uppercase tracking-widest text-red-500">
-          {app.subtitle}
+          {localized.subtitle}
         </p>
 
         <h3 className="text-2xl font-bold text-white">
@@ -39,7 +43,7 @@ export default function AppCard({ app, onOpen }: Props) {
         </h3>
 
         <p className="mt-4 leading-7 text-zinc-400">
-          {app.description}
+          {localized.description}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -59,7 +63,7 @@ export default function AppCard({ app, onOpen }: Props) {
         >
           <Smartphone size={18} />
 
-          Prova App
+          {tryApp}
         </button>
 
       </div>

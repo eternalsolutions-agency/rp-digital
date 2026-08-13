@@ -1,94 +1,14 @@
+"use client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-
-export default function PartnerPage() {
-  return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-black px-6 pb-28 pt-36 text-white">
-        <section className="mx-auto max-w-7xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-red-500">
-            Collaborazioni
-          </span>
-
-          <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight md:text-7xl">
-            Partner
-          </h1>
-
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-zinc-400">
-            Collaborazioni professionali e progetti che condividono una visione concreta:
-            usare il digitale per creare valore, opportunità e impatto positivo.
-          </p>
-
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-
-            <article className="flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
-                Partner tecnologico
-              </p>
-              <h2 className="mt-4 text-3xl font-black">AppStream</h2>
-              <p className="mt-5 flex-1 leading-7 text-zinc-400">
-                Realtà specializzata nello sviluppo di applicazioni mobile per aziende e
-                professionisti. Le soluzioni sono pensate per diversi settori, tra cui
-                ristorazione, eventi, salute e benessere, shopping, servizi e strutture
-                ricettive, con funzionalità dedicate a ordini, prenotazioni, appuntamenti
-                ed e-commerce.
-              </p>
-              <Link
-                href="https://www.appstream.it/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex w-fit rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-500"
-              >
-                Visita AppStream
-              </Link>
-            </article>
-
-            <article className="flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
-                Progetto sostenuto
-              </p>
-              <h2 className="mt-4 text-3xl font-black">Progetto Libri Liberi</h2>
-              <p className="mt-5 leading-7 text-zinc-400">
-                Un progetto nato a Pisa per rimettere in circolo libri, giochi educativi
-                e occasioni di socialità attraverso casette in legno collocate nei luoghi
-                della comunità. L'obiettivo è rendere cultura e condivisione accessibili
-                gratuitamente ad adulti e bambini.
-              </p>
-              <p className="mt-4 flex-1 leading-7 text-zinc-300">
-                RP Digital sostiene concretamente il progetto: una parte del ricavato di
-                ogni nuovo servizio realizzato viene destinata a Progetto Libri Liberi,
-                contribuendo alla crescita dell'iniziativa e alla realizzazione di nuove attività.
-              </p>
-              <Link
-                href="https://www.progettolibriliberi.it/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex w-fit rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-500"
-              >
-                Scopri Progetto Libri Liberi
-              </Link>
-            </article>
-
-          </div>
-
-          <div className="mt-16 rounded-3xl border border-red-500/20 bg-red-500/[0.06] p-8 md:p-10">
-            <h2 className="text-2xl font-bold">Vuoi collaborare con RP Digital?</h2>
-            <p className="mt-3 max-w-2xl leading-7 text-zinc-400">
-              Valuto collaborazioni con aziende, professionisti e realtà complementari
-              per sviluppare nuovi progetti e creare opportunità condivise.
-            </p>
-            <Link
-              href="/contatti"
-              className="mt-7 inline-flex rounded-xl border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-red-500 hover:text-red-400"
-            >
-              Parliamone
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
-}
+import { useLanguage } from "@/components/LanguageProvider";
+const copy={
+it:{label:"Collaborazioni",intro:"Collaborazioni professionali e progetti che condividono una visione concreta: usare il digitale per creare valore, opportunità e impatto positivo.",tech:"Partner tecnologico",app:"Realtà specializzata nello sviluppo di applicazioni mobile per aziende e professionisti. Le soluzioni sono pensate per diversi settori, tra cui ristorazione, eventi, salute e benessere, shopping, servizi e strutture ricettive, con funzionalità dedicate a ordini, prenotazioni, appuntamenti ed e-commerce.",visit:"Visita AppStream",supported:"Progetto sostenuto",pll:"Un progetto nato a Pisa per rimettere in circolo libri, giochi educativi e occasioni di socialità attraverso casette in legno collocate nei luoghi della comunità. L'obiettivo è rendere cultura e condivisione accessibili gratuitamente ad adulti e bambini.",support:"RP Digital sostiene concretamente il progetto: una parte del ricavato di ogni nuovo servizio realizzato viene destinata a Progetto Libri Liberi, contribuendo alla crescita dell'iniziativa e alla realizzazione di nuove attività.",discover:"Scopri Progetto Libri Liberi",cta:"Vuoi collaborare con RP Digital?",ctap:"Valuto collaborazioni con aziende, professionisti e realtà complementari per sviluppare nuovi progetti e creare opportunità condivise.",talk:"Parliamone"},
+en:{label:"Collaborations",intro:"Professional collaborations and projects sharing a concrete vision: using digital technology to create value, opportunities and positive impact.",tech:"Technology partner",app:"A company specialized in mobile application development for businesses and professionals. Its solutions cover sectors including restaurants, events, health and wellness, shopping, services and hospitality, with features for orders, bookings, appointments and e-commerce.",visit:"Visit AppStream",supported:"Supported project",pll:"A project born in Pisa to circulate books, educational games and opportunities for social connection through wooden sharing boxes placed in community spaces. Its goal is to make culture and sharing freely accessible to adults and children.",support:"RP Digital actively supports the project: part of the revenue from every new service is allocated to Progetto Libri Liberi, helping the initiative grow and develop new activities.",discover:"Discover Progetto Libri Liberi",cta:"Would you like to collaborate with RP Digital?",ctap:"I consider collaborations with companies, professionals and complementary organizations to develop new projects and create shared opportunities.",talk:"Let's talk"},
+es:{label:"Colaboraciones",intro:"Colaboraciones profesionales y proyectos que comparten una visión concreta: utilizar lo digital para crear valor, oportunidades e impacto positivo.",tech:"Partner tecnológico",app:"Empresa especializada en el desarrollo de aplicaciones móviles para empresas y profesionales. Sus soluciones abarcan sectores como restauración, eventos, salud y bienestar, shopping, servicios y hostelería, con funciones para pedidos, reservas, citas y e-commerce.",visit:"Visitar AppStream",supported:"Proyecto apoyado",pll:"Un proyecto nacido en Pisa para poner en circulación libros, juegos educativos y oportunidades de socialización mediante casetas de madera situadas en espacios de la comunidad. Su objetivo es hacer que la cultura y el intercambio sean accesibles gratuitamente para adultos y niños.",support:"RP Digital apoya concretamente el proyecto: una parte de los ingresos de cada nuevo servicio se destina a Progetto Libri Liberi, contribuyendo al crecimiento de la iniciativa y al desarrollo de nuevas actividades.",discover:"Descubrir Progetto Libri Liberi",cta:"¿Quieres colaborar con RP Digital?",ctap:"Valoro colaboraciones con empresas, profesionales y organizaciones complementarias para desarrollar nuevos proyectos y crear oportunidades compartidas.",talk:"Hablemos"}
+};
+export default function PartnerPage(){const {language}=useLanguage();const t=copy[language];return <><Header/><main className="min-h-screen bg-black px-6 pb-28 pt-36 text-white"><section className="mx-auto max-w-7xl"><span className="text-sm font-semibold uppercase tracking-[.25em] text-red-500">{t.label}</span><h1 className="mt-5 text-5xl font-black md:text-7xl">Partner</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-zinc-400">{t.intro}</p><div className="mt-14 grid gap-8 md:grid-cols-2">
+<article className="flex flex-col rounded-3xl border border-white/10 bg-white/[.03] p-8"><p className="text-sm font-semibold uppercase tracking-[.2em] text-red-500">{t.tech}</p><h2 className="mt-4 text-3xl font-black">AppStream</h2><p className="mt-5 flex-1 leading-7 text-zinc-400">{t.app}</p><Link href="https://www.appstream.it/" target="_blank" className="mt-8 inline-flex w-fit rounded-xl bg-red-600 px-6 py-3 font-semibold">{t.visit}</Link></article>
+<article className="flex flex-col rounded-3xl border border-white/10 bg-white/[.03] p-8"><p className="text-sm font-semibold uppercase tracking-[.2em] text-red-500">{t.supported}</p><h2 className="mt-4 text-3xl font-black">Progetto Libri Liberi</h2><p className="mt-5 leading-7 text-zinc-400">{t.pll}</p><p className="mt-4 flex-1 leading-7 text-zinc-300">{t.support}</p><Link href="https://www.progettolibriliberi.it/" target="_blank" className="mt-8 inline-flex w-fit rounded-xl bg-red-600 px-6 py-3 font-semibold">{t.discover}</Link></article></div>
+<div className="mt-16 rounded-3xl border border-red-500/20 bg-red-500/[.06] p-8 md:p-10"><h2 className="text-2xl font-bold">{t.cta}</h2><p className="mt-3 max-w-2xl leading-7 text-zinc-400">{t.ctap}</p><Link href="/contatti" className="mt-7 inline-flex rounded-xl border border-white/15 px-6 py-3 font-semibold">{t.talk}</Link></div></section></main><Footer/></>}

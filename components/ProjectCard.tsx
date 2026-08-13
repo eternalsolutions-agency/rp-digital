@@ -5,12 +5,16 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { PortfolioItem } from "@/data/portfolio";
+import { Language } from "./LanguageProvider";
 
 type Props = {
   project: PortfolioItem;
+  language: Language;
 };
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, language }: Props) {
+  const localized = language === "it" ? {subtitle: project.subtitle, description: project.description} : project.translations?.[language] || {subtitle: project.subtitle, description: project.description};
+  const visit = language === "en" ? "Visit website" : language === "es" ? "Visitar sitio" : "Visita il sito";
   return (
     <motion.article
       whileHover={{ y: -8 }}
@@ -29,7 +33,7 @@ export default function ProjectCard({ project }: Props) {
       <div className="p-7">
 
         <p className="mb-2 text-sm uppercase tracking-widest text-red-500">
-          {project.subtitle}
+          {localized.subtitle}
         </p>
 
         <h3 className="text-2xl font-bold text-white">
@@ -37,7 +41,7 @@ export default function ProjectCard({ project }: Props) {
         </h3>
 
         <p className="mt-4 leading-7 text-zinc-400">
-          {project.description}
+          {localized.description}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -56,7 +60,7 @@ export default function ProjectCard({ project }: Props) {
           target="_blank"
           className="mt-8 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
         >
-          Visita il sito
+          {visit}
 
           <ExternalLink size={18} />
         </Link>

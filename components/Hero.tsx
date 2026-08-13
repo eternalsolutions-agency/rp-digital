@@ -2,8 +2,16 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
+const copy = {
+  it: { title1:"Trasformo idee", title2:"in risultati.", text:"Realizzo siti web, app, strategie social e digital marketing per trasformare la tua presenza online in un reale vantaggio competitivo.", write:"Scrivimi", exp:"Oltre 8 anni di esperienza", custom:"Soluzioni su misura", support:"Supporto diretto", video:"Il tuo browser non supporta il video.", aria:"Vai alla sezione servizi" },
+  en: { title1:"I turn ideas", title2:"into results.", text:"I create websites, apps, social strategies and digital marketing solutions to turn your online presence into a real competitive advantage.", write:"Contact me", exp:"Over 8 years of experience", custom:"Tailor-made solutions", support:"Direct support", video:"Your browser does not support video.", aria:"Go to services" },
+  es: { title1:"Transformo ideas", title2:"en resultados.", text:"Creo sitios web, apps, estrategias sociales y marketing digital para transformar tu presencia online en una verdadera ventaja competitiva.", write:"Contáctame", exp:"Más de 8 años de experiencia", custom:"Soluciones a medida", support:"Soporte directo", video:"Tu navegador no admite vídeo.", aria:"Ir a servicios" }
+};
 export default function Hero() {
+  const { language } = useLanguage();
+  const t = copy[language];
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-black py-24">
       {/* Background */}
@@ -33,9 +41,9 @@ export default function Hero() {
             transition={{ delay: .2, duration: .7 }}
             className="mt-8 max-w-5xl text-6xl font-black leading-none tracking-tight text-white md:text-8xl"
           >
-            Trasformo idee
+            {t.title1}
             <br />
-            in risultati.
+            {t.title2}
           </motion.h1>
 
           <motion.p
@@ -44,8 +52,7 @@ export default function Hero() {
             transition={{ delay: .45 }}
             className="mt-8 max-w-2xl text-xl leading-9 text-zinc-400"
         >
-            Realizzo siti web, app, strategie social e digital marketing
-            per trasformare la tua presenza online in un reale vantaggio competitivo.
+            {t.text}
           </motion.p>
 
           <motion.div
@@ -58,7 +65,7 @@ export default function Hero() {
               href="/contatti"
               className="flex items-center gap-2 rounded-xl bg-red-600 px-8 py-4 font-semibold text-white transition hover:scale-105 hover:bg-red-500"
             >
-              Scrivimi
+              {t.write}
               <ArrowRight size={18} />
             </a>
 
@@ -76,9 +83,9 @@ export default function Hero() {
             transition={{ delay: 1, duration: 0.7 }}
             className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-zinc-400"
           >
-            <span>✔ Oltre 8 anni di esperienza</span>
-            <span>✔ Soluzioni su misura</span>
-            <span>✔ Supporto diretto</span>
+            <span>✔ {t.exp}</span>
+            <span>✔ {t.custom}</span>
+            <span>✔ {t.support}</span>
           </motion.div>
         </div>
 
@@ -101,7 +108,7 @@ export default function Hero() {
               className="aspect-square w-full rounded-[20px] object-cover"
             >
               <source src="/videos/video-logo.mp4" type="video/mp4" />
-              Il tuo browser non supporta il video.
+              {t.video}
             </video>
 
             <div className="pointer-events-none absolute inset-2 rounded-[20px] bg-gradient-to-tr from-transparent via-white/5 to-white/10" />
@@ -114,7 +121,7 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.8 }}
         className="absolute bottom-5 left-1/2 -translate-x-1/2 text-zinc-500"
-        aria-label="Vai alla sezione servizi"
+        aria-label={t.aria}
       >
         <ChevronDown size={36} />
       </motion.a>
