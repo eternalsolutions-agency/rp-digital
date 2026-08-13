@@ -55,7 +55,7 @@ export default function Hero() {
             className="mt-10 flex flex-wrap gap-5"
           >
             <a
-              href="#contatti"
+              href="/contatti"
               className="flex items-center gap-2 rounded-xl bg-red-600 px-8 py-4 font-semibold text-white transition hover:scale-105 hover:bg-red-500"
             >
               Scrivimi
@@ -63,7 +63,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#portfolio"
+              href="/portfolio"
               className="rounded-xl border border-white/20 px-8 py-4 font-semibold text-white transition hover:border-white hover:bg-white/5"
             >
               Portfolio
@@ -110,7 +110,7 @@ export default function Hero() {
       </div>
 
       <motion.a
-        href="#servizi"
+        href="/servizi"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.8 }}
         className="absolute bottom-5 left-1/2 -translate-x-1/2 text-zinc-500"
