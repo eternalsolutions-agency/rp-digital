@@ -11,6 +11,23 @@ export type PortfolioItem = {
 
 export const portfolio: PortfolioItem[] = [
   {
+    id: 7,
+    type: "website",
+    title: "Progetto Libri Liberi",
+    subtitle: "Sito Web • Progetto culturale",
+    description:
+      "Sito web realizzato per Progetto Libri Liberi, iniziativa nata a Pisa che porta libri, racconti e giochi gratuiti per adulti e bambini nei luoghi della comunità attraverso casette in legno. Il sito presenta il progetto, la mappa delle casette, la galleria, le news e le modalità per aderire, donare o diventare partner.",
+    image: "/images/portfolio/progetto-libri-liberi.png",
+    url: "https://www.progettolibriliberi.it/",
+    technologies: [
+      "Web Design",
+      "Responsive",
+      "Mappa",
+      "SEO"
+    ]
+  },
+
+  {
     id: 1,
     type: "website",
     title: "Amministrazioni Condominiali Rovereto",
