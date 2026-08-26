@@ -46,9 +46,9 @@ export default function Portfolio() {
               Portfolio
             </p>
 
-            <h2 className="mt-4 text-5xl font-black tracking-[-.04em] text-white md:text-7xl">
+            <h1 className="mt-4 text-5xl font-black tracking-[-.04em] text-white md:text-7xl">
               {t.title}
-            </h2>
+            </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
               {t.intro}

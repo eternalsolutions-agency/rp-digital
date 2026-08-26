@@ -1,0 +1,1 @@
+import type { MetadataRoute } from "next"; export default function sitemap():MetadataRoute.Sitemap{const b="https://rpdigital.it";return [["/",1],["/chi-sono",.8],["/servizi",.9],["/portfolio",.9],["/partner",.7],["/contatti",.8]].map(([p,priority])=>({url:b+p,changeFrequency:"monthly" as const,priority:priority as number}))}

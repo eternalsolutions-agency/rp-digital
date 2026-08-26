@@ -4,33 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import SceneFX from "@/components/SceneFX";
 import RiaChat from "@/components/RiaChat";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "RP Digital | Web, App, Marketing & AI",
-  description: "Strategia digitale, siti web, app, social media, advertising, SEO e soluzioni AI per aziende e professionisti.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col"><LanguageProvider><SceneFX />{children}<RiaChat /></LanguageProvider></body>
-    </html>
-  );
-}
+const geistSans=Geist({variable:"--font-geist-sans",subsets:["latin"]}); const geistMono=Geist_Mono({variable:"--font-geist-mono",subsets:["latin"]});
+export const metadata:Metadata={metadataBase:new URL("https://rpdigital.it"),title:{default:"RP Digital | Siti Web, App e Digital Marketing",template:"%s | RP Digital"},description:"Siti web, e-commerce, app, SEO, social media e advertising per aziende e professionisti.",alternates:{canonical:"/"},openGraph:{type:"website",locale:"it_IT",url:"https://rpdigital.it",siteName:"RP Digital",title:"RP Digital | Siti Web, App e Digital Marketing",description:"Siti web, e-commerce, app e strategie di digital marketing per aziende e professionisti.",images:[{url:"/images/logo.png",alt:"RP Digital"}]},twitter:{card:"summary_large_image",title:"RP Digital | Siti Web, App e Digital Marketing",description:"Siti web, e-commerce, app e strategie digitali per aziende e professionisti.",images:["/images/logo.png"]},robots:{index:true,follow:true}};
+const structuredData={"@context":"https://schema.org","@type":"ProfessionalService",name:"RP Digital",url:"https://rpdigital.it",logo:"https://rpdigital.it/images/logo.png",email:"info@rpdigital.it",telephone:"+393775994493",founder:{"@type":"Person",name:"Riccardo Pellegrino"},areaServed:{"@type":"Country",name:"Italia"},serviceType:["Siti web","E-commerce","Applicazioni","SEO","Social media marketing","Digital advertising"]};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="it" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}}/><LanguageProvider><SceneFX/>{children}<RiaChat/></LanguageProvider></body></html>}
