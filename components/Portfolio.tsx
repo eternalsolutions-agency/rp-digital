@@ -29,7 +29,7 @@ export default function Portfolio() {
     <>
       <section
         id="portfolio"
-        className="bg-[#080808] py-24"
+        className="relative overflow-hidden bg-[#080808] py-28"
       >
         <div className="mx-auto max-w-7xl px-6">
 
@@ -44,7 +44,7 @@ export default function Portfolio() {
               Portfolio
             </p>
 
-            <h2 className="mt-4 text-5xl font-black text-white">
+            <h2 className="mt-4 text-5xl font-black tracking-[-.04em] text-white md:text-7xl">
               {t.title}
             </h2>
 

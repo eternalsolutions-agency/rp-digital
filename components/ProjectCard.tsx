@@ -19,14 +19,14 @@ export default function ProjectCard({ project, language }: Props) {
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25 }}
-      className="overflow-hidden rounded-3xl border border-white/10 bg-[#101010] shadow-xl"
+      className="wow-card glass-panel group overflow-hidden rounded-[32px] shadow-2xl"
     >
       <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition duration-500 hover:scale-105"
+          className="object-cover transition duration-700 group-hover:scale-110"
         />
       </div>
 
@@ -58,7 +58,7 @@ export default function ProjectCard({ project, language }: Props) {
         <Link
           href={project.url}
           target="_blank"
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
         >
           {visit}
 

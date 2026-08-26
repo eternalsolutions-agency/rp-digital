@@ -19,7 +19,7 @@ export default function AppCard({ app, onOpen, language }: Props) {
     <motion.article
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.25 }}
-      className="overflow-hidden rounded-3xl border border-white/10 bg-[#101010] shadow-xl"
+      className="wow-card glass-panel group overflow-hidden rounded-[32px] shadow-2xl"
     >
       <div className="relative h-60 w-full bg-zinc-900">
 
@@ -27,7 +27,7 @@ export default function AppCard({ app, onOpen, language }: Props) {
           src={app.image}
           alt={app.title}
           fill
-          className="object-cover"
+          className="object-cover transition duration-700 group-hover:scale-110"
         />
 
       </div>
@@ -59,7 +59,7 @@ export default function AppCard({ app, onOpen, language }: Props) {
 
         <button
           onClick={() => onOpen(app)}
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
         >
           <Smartphone size={18} />
 

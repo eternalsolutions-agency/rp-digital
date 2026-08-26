@@ -46,16 +46,16 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${scrolled ? "border-b border-white/10 bg-black/75 backdrop-blur-xl shadow-2xl" : "bg-black/35 backdrop-blur-sm"}`}>
+      <header className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${scrolled ? "border-b border-white/10 bg-black/70 backdrop-blur-2xl shadow-2xl" : "bg-black/35 backdrop-blur-sm"}`}>
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link href="/" aria-label="RP Digital - Home">
             <Image src="/images/logo.png" alt="RP Digital" width={170} height={55} priority />
           </Link>
           <nav className="hidden items-center gap-5 md:flex">
-            {links.map((link) => <Link key={link.href} href={link.href} className="text-sm font-medium text-zinc-300 transition hover:text-white">{link.name}</Link>)}
+            {links.map((link) => <Link key={link.href} href={link.href} className="relative text-sm font-medium text-zinc-300 transition after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-red-500 after:transition-all hover:text-white hover:after:w-full">{link.name}</Link>)}
             <LanguageSwitch />
           </nav>
-          <Link href="/contatti" className="hidden rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-500 lg:block">{t.write}</Link>
+          <Link href="/contatti" className="hidden rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-500 lg:block">{t.write}</Link>
           <button onClick={() => setMobileOpen(!mobileOpen)} className="text-white md:hidden" aria-label={t.menu}>{mobileOpen ? <X size={30}/> : <Menu size={30}/>}</button>
         </div>
       </header>
