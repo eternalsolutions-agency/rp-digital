@@ -9,6 +9,7 @@ import { useLanguage } from "./LanguageProvider";
 import ProjectCard from "./ProjectCard";
 import AppCard from "./AppCard";
 import PhonePreviewModal from "./PhonePreviewModal";
+import PageAura from "./PageAura";
 
 type Filter = "all" | "website" | "app";
 
@@ -31,7 +32,8 @@ export default function Portfolio() {
         id="portfolio"
         className="relative overflow-hidden bg-[#080808] py-28"
       >
-        <div className="mx-auto max-w-7xl px-6">
+        <PageAura word="WORK"/>
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
 
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -57,10 +59,10 @@ export default function Portfolio() {
 
             <button
               onClick={() => setFilter("all")}
-              className={`rounded-full px-6 py-3 transition ${
+              className={`border rounded-full px-6 py-3 transition ${
                 filter === "all"
-                  ? "bg-red-600 text-white"
-                  : "bg-zinc-900 text-zinc-400 hover:text-white"
+                  ? "border-red-500 bg-red-600 text-white shadow-[0_0_28px_rgba(239,32,41,.18)]"
+                  : "border-white/10 bg-white/[.03] text-zinc-400 hover:border-white/20 hover:text-white"
               }`}
             >
               {t.all}
@@ -68,10 +70,10 @@ export default function Portfolio() {
 
             <button
               onClick={() => setFilter("website")}
-              className={`rounded-full px-6 py-3 transition ${
+              className={`border rounded-full px-6 py-3 transition ${
                 filter === "website"
-                  ? "bg-red-600 text-white"
-                  : "bg-zinc-900 text-zinc-400 hover:text-white"
+                  ? "border-red-500 bg-red-600 text-white shadow-[0_0_28px_rgba(239,32,41,.18)]"
+                  : "border-white/10 bg-white/[.03] text-zinc-400 hover:border-white/20 hover:text-white"
               }`}
             >
               {t.web}
@@ -79,10 +81,10 @@ export default function Portfolio() {
 
             <button
               onClick={() => setFilter("app")}
-              className={`rounded-full px-6 py-3 transition ${
+              className={`border rounded-full px-6 py-3 transition ${
                 filter === "app"
-                  ? "bg-red-600 text-white"
-                  : "bg-zinc-900 text-zinc-400 hover:text-white"
+                  ? "border-red-500 bg-red-600 text-white shadow-[0_0_28px_rgba(239,32,41,.18)]"
+                  : "border-white/10 bg-white/[.03] text-zinc-400 hover:border-white/20 hover:text-white"
               }`}
             >
               {t.apps}
