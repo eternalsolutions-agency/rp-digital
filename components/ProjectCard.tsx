@@ -15,22 +15,23 @@ type Props = {
 export default function ProjectCard({ project, language }: Props) {
   const localized = language === "it" ? {subtitle: project.subtitle, description: project.description} : project.translations?.[language] || {subtitle: project.subtitle, description: project.description};
   const visit = language === "en" ? "Visit website" : language === "es" ? "Visitar sitio" : "Visita il sito";
+  const publishing = language === "en" ? "Created by RP Digital · Publishing in progress" : language === "es" ? "Realizado por RP Digital · Publicación en curso" : "Realizzato da RP Digital · Pubblicazione in corso";
   return (
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.25 }}
-      className="wow-card glass-panel group overflow-hidden rounded-[32px] shadow-2xl"
+      className="wow-card glass-panel group flex h-full flex-col overflow-hidden rounded-[32px] shadow-2xl"
     >
       <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition duration-700 group-hover:scale-110"
+          className="object-contain p-5 transition duration-700 group-hover:scale-105"
         />
       </div>
 
-      <div className="p-7">
+      <div className="flex flex-1 flex-col p-7">
 
         <p className="mb-2 text-sm uppercase tracking-widest text-red-500">
           {localized.subtitle}
@@ -40,7 +41,7 @@ export default function ProjectCard({ project, language }: Props) {
           {project.title}
         </h3>
 
-        <p className="mt-4 leading-7 text-zinc-400">
+        <p className="mt-4 flex-1 leading-7 text-zinc-400">
           {localized.description}
         </p>
 
@@ -55,15 +56,20 @@ export default function ProjectCard({ project, language }: Props) {
           ))}
         </div>
 
-        <Link
-          href={project.url}
-          target="_blank"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
-        >
-          {visit}
-
-          <ExternalLink size={18} />
-        </Link>
+        {project.publishing ? (
+          <div className="mt-8 inline-flex w-fit items-center rounded-full border border-red-500/30 bg-red-500/10 px-5 py-3 text-sm font-semibold text-red-300">
+            {publishing}
+          </div>
+        ) : (
+          <Link
+            href={project.url}
+            target="_blank"
+            className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700"
+          >
+            {visit}
+            <ExternalLink size={18} />
+          </Link>
+        )}
 
       </div>
     </motion.article>

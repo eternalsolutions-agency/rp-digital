@@ -8,9 +8,40 @@ export type PortfolioItem = {
   url: string;
   technologies: string[];
   translations?: { en: { subtitle: string; description: string }; es: { subtitle: string; description: string } };
+  publishing?: boolean;
 };
 
 export const portfolio: PortfolioItem[] = [
+  {
+    id: 9,
+    type: "website",
+    title: "Ciccio Pubblicità",
+    subtitle: "Sito vetrina • Catalogo • Multilingua",
+    description: "Sito web realizzato per un’azienda specializzata in personalizzazione di abbigliamento, ricamo professionale, stampa e gadget promozionali. Un progetto pensato per valorizzare servizi, catalogo e promozioni e facilitare la richiesta di preventivo.",
+    translations: {
+      en: { subtitle: "Showcase website • Catalogue • Multilingual", description: "Website created for a company specializing in customized clothing, professional embroidery, printing and promotional gadgets. A project designed to showcase services, catalogue and promotions and make quote requests easier." },
+      es: { subtitle: "Sitio escaparate • Catálogo • Multilingüe", description: "Sitio web creado para una empresa especializada en ropa personalizada, bordado profesional, impresión y gadgets promocionales. Un proyecto diseñado para destacar servicios, catálogo y promociones y facilitar la solicitud de presupuestos." }
+    },
+    image: "/images/portfolio/ciccio-pubblicita.png",
+    url: "",
+    technologies: ["Web Design", "Catalogo", "Multilingua", "Responsive"],
+    publishing: true
+  },
+  {
+    id: 8,
+    type: "website",
+    title: "KAÓS Luxury Cosmetics",
+    subtitle: "E-commerce • Beauty • Luxury",
+    description: "E-commerce progettato per valorizzare l’identità premium di KAÓS Luxury Cosmetics e accompagnare l’utente dalla scoperta dei prodotti fino all’acquisto online, con un’esperienza visiva coerente con il posizionamento luxury del brand.",
+    translations: {
+      en: { subtitle: "E-commerce • Beauty • Luxury", description: "E-commerce designed to enhance the premium identity of KAÓS Luxury Cosmetics and guide users from product discovery through online purchase, with a visual experience consistent with the brand’s luxury positioning." },
+      es: { subtitle: "E-commerce • Beauty • Luxury", description: "E-commerce diseñado para potenciar la identidad premium de KAÓS Luxury Cosmetics y acompañar al usuario desde el descubrimiento de los productos hasta la compra online, con una experiencia visual coherente con el posicionamiento luxury de la marca." }
+    },
+    image: "/images/portfolio/kaos-luxury.jpg",
+    url: "",
+    technologies: ["E-commerce", "Web Design", "Responsive", "Beauty"],
+    publishing: true
+  },
   {
     id: 7,
     type: "website",
