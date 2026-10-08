@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Mail, Globe } from "lucide-react";
+import { Phone, Globe } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 
 function LinkedinIcon() {
@@ -49,10 +49,6 @@ export default function Footer() {
               <p className="flex items-center gap-3">
                 <Phone size={18} className="text-red-500" />
                 377 599 4493
-              </p>
-              <p className="flex items-center gap-3">
-                <Mail size={18} className="text-red-500" />
-                info@rpdigital.it
               </p>
               <p className="flex items-center gap-3">
                 <Globe size={18} className="text-red-500" />
