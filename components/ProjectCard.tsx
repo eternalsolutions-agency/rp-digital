@@ -25,13 +25,13 @@ export default function ProjectCard({ project, language }: Props) {
     >
       <div className="relative h-64 w-full overflow-hidden">
         {isFuturoAmbiente ? (
-          <div className="absolute inset-0 flex items-center justify-center p-8">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="max-h-full max-w-full object-contain transition duration-700 group-hover:scale-105"
-            />
-          </div>
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-contain px-8 py-10 transition duration-700 group-hover:scale-[1.02]"
+          />
         ) : (
           <Image
             src={project.image}
