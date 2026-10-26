@@ -16,6 +16,7 @@ export default function ProjectCard({ project, language }: Props) {
   const localized = language === "it" ? {subtitle: project.subtitle, description: project.description} : project.translations?.[language] || {subtitle: project.subtitle, description: project.description};
   const visit = language === "en" ? "Visit website" : language === "es" ? "Visitar sitio" : "Visita il sito";
   const publishing = language === "en" ? "Created by RP Digital · Publishing in progress" : language === "es" ? "Realizado por RP Digital · Publicación en curso" : "Realizzato da RP Digital · Pubblicazione in corso";
+  const isFuturoAmbiente = project.id === 10;
   return (
     <motion.article
       whileHover={{ y: -8 }}
@@ -23,12 +24,22 @@ export default function ProjectCard({ project, language }: Props) {
       className="wow-card glass-panel group flex h-full flex-col overflow-hidden rounded-[32px] shadow-2xl"
     >
       <div className="relative h-64 w-full overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-contain p-5 transition duration-700 group-hover:scale-105"
-        />
+        {isFuturoAmbiente ? (
+          <div className="absolute inset-0 flex items-center justify-center p-8">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="max-h-full max-w-full object-contain transition duration-700 group-hover:scale-105"
+            />
+          </div>
+        ) : (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-contain p-5 transition duration-700 group-hover:scale-105"
+          />
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-7">
