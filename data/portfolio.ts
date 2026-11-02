@@ -65,7 +65,7 @@ export const portfolio: PortfolioItem[] = [
       en: { subtitle: "Website • Cultural project", description: "Website created for Progetto Libri Liberi, an initiative born in Pisa that brings free books, stories and games for adults and children into community spaces through wooden book-sharing boxes. The website presents the project, the map, gallery, news and ways to join, donate or become a partner." },
       es: { subtitle: "Sitio Web • Proyecto cultural", description: "Sitio web creado para Progetto Libri Liberi, una iniciativa nacida en Pisa que lleva libros, cuentos y juegos gratuitos para adultos y niños a los espacios de la comunidad mediante casetas de madera. El sitio presenta el proyecto, el mapa, la galería, noticias y formas de participar, donar o convertirse en partner." }
     },
-    image: "/images/portfolio/progetto-libri-liberi.png",
+    image: "/images/libri-liberi-logo.jpg",
     url: "https://www.progettolibriliberi.it/",
     technologies: ["Web Design", "Responsive", "Mappa", "SEO"]
   },
