@@ -23,20 +23,21 @@ export default function ProjectCard({ project, language }: Props) {
       transition={{ duration: 0.25 }}
       className="wow-card glass-panel group flex h-full flex-col overflow-hidden rounded-[32px] shadow-2xl"
     >
-      <div className="relative h-64 w-full overflow-hidden">
+      <div className={`relative h-64 w-full overflow-hidden ${isFuturoAmbiente ? "bg-white" : ""}`}>
         {isFuturoAmbiente ? (
           <Image
             src={project.image}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain px-8 py-10 transition duration-700 group-hover:scale-[1.02]"
+            className="object-contain p-12 transition duration-700 group-hover:scale-[1.02]"
           />
         ) : (
           <Image
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain p-5 transition duration-700 group-hover:scale-105"
           />
         )}
