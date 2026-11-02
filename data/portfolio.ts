@@ -22,7 +22,7 @@ export const portfolio: PortfolioItem[] = [
       en: { subtitle: "Corporate website • Technical services • B2B", description: "Corporate website created for Futuro Ambiente, a company providing services to businesses and private clients. The project clearly presents its different areas of expertise, including safety, construction, systems, maintenance, energy, training and tender support, while highlighting experience and making it easier for new clients to get in touch." },
       es: { subtitle: "Sitio corporativo • Servicios técnicos • B2B", description: "Sitio corporativo creado para Futuro Ambiente, empresa que presta servicios a empresas y particulares. El proyecto presenta de forma clara sus distintas áreas de especialización, entre seguridad, construcción, instalaciones, mantenimiento, energía, formación y apoyo en licitaciones, destacando su experiencia y facilitando el contacto con nuevos clientes." }
     },
-    image: "/images/portfolio/futuro-ambiente.png",
+    image: "/images/portfolio/logo-futuro-ambiente-ok.png",
     url: "https://www.futuroambiente.info/",
     technologies: ["Web Design", "Corporate", "Responsive", "SEO"]
   },
