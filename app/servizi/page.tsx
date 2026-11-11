@@ -3,4 +3,5 @@ export const metadata: Metadata = { title: "Servizi Digitali | Siti Web, App, SE
 import Header from "@/components/Header";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
-export default function ServiziPage(){return <><Header/><main className="pt-20"><Services/></main><Footer/></>}
+import Link from "next/link";
+export default function ServiziPage(){return <><Header/><main className="pt-20"><Services/><section className="mx-auto max-w-7xl px-6 pb-24"><Link href="/chatgpt-ads" className="glass-panel group block rounded-[32px] border border-red-500/20 p-8 transition hover:border-red-500/60 md:p-12"><span className="eyebrow text-xs font-bold text-red-500">NUOVO SERVIZIO · CHATGPT ADS</span><h2 className="mt-4 text-3xl font-black text-white md:text-4xl">La tua azienda nelle conversazioni che contano.</h2><p className="mt-4 max-w-2xl leading-8 text-zinc-400">Scopri la gestione pubblicitaria su ChatGPT e approfitta dell’offerta lancio fino al 31 dicembre 2026.</p><span className="mt-6 inline-block font-semibold text-red-400 group-hover:text-red-300">Scopri il servizio →</span></Link></section></main><Footer/></>}
